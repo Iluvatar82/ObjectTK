@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <OutputType>WinExe</OutputType>
     <UseWindowsForms>True</UseWindowsForms>
+	<EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
 
   <ItemGroup>
