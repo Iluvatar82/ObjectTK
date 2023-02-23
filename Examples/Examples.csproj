@@ -7,6 +7,7 @@
     <OutputType>WinExe</OutputType>
     <UseWindowsForms>True</UseWindowsForms>
 	<EnableWindowsTargeting>true</EnableWindowsTargeting>
+	<Configurations>Debug;Release;DebugNoPostEvents</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,26 +41,26 @@
     <Content Include="Data\Textures\swizzled-rock-diffuse-height.dds" />
     <Content Include="Data\Textures\swizzled-rock-normal-gloss.dds" />
   </ItemGroup>
-	<PropertyGroup>
-		<PostBuildEvent>rd /Q /S "$(MSBuildProjectDirectory)\$(OutputPath)bin\$(Configuration)\net7.0-windows\Data"
+  <PropertyGroup Condition="$(Configuration) != 'DebugNoPostEvents'">
+	  <PostBuildEvent>rd /Q /S "$(MSBuildProjectDirectory)\$(OutputPath)bin\$(Configuration)\net7.0-windows\Data"
 xcopy "$(MSBuildProjectDirectory)\Data" "$(MSBuildProjectDirectory)\$(OutputPath)bin\$(Configuration)\net7.0-windows\Data" /E /R /K /Y /I /D /H</PostBuildEvent>
-		<BaseOutputPath></BaseOutputPath>
-	</PropertyGroup>
+	  <BaseOutputPath></BaseOutputPath>
+  </PropertyGroup>
 
-	<ItemGroup>
-    <PackageReference Include="log4net" Version="2.0.15" />
-    <PackageReference Include="OpenTK" Version="4.7.7" />
+  <ItemGroup>
+	  <PackageReference Include="log4net" Version="2.0.15" />
+	  <PackageReference Include="OpenTK" Version="4.7.7" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ObjectTK.Tools\ObjectTK.Tools.csproj" />
-    <ProjectReference Include="..\ObjectTK\ObjectTK.csproj" />
+	  <ProjectReference Include="..\ObjectTK.Tools\ObjectTK.Tools.csproj" />
+	  <ProjectReference Include="..\ObjectTK\ObjectTK.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System.Windows.Forms">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Windows.Forms.dll</HintPath>
-    </Reference>
+	  <Reference Include="System.Windows.Forms">
+		  <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Windows.Forms.dll</HintPath>
+	  </Reference>
   </ItemGroup>
 
 </Project>
