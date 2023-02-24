@@ -5,14 +5,22 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Configurations>Debug;Release;DebugNoPostEvents</Configurations>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>$(AssemblyName)_net70</PackageId>
+    <Title>ObjectTK.Tools ported to net7.0</Title>
+    <Authors>OpenTK Team;Franz Spitaler</Authors>
+    <Description>ObjectTK.Tools ported to net7.0 to be abled to use it in newer Environments.</Description>
+    <PackageProjectUrl>https://github.com/Iluvatar82/ObjectTK</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Iluvatar82/ObjectTK</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>opengl;opentk;objecttk;tools</PackageTags>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ObjectTK_net70" Version="1.0.0" />
     <PackageReference Include="OpenTK" Version="4.7.7" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\ObjectTK\ObjectTK.csproj" />
   </ItemGroup>
 
 </Project>
