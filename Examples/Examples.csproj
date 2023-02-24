@@ -54,7 +54,6 @@ xcopy "$(MSBuildProjectDirectory)\Data" "$(MSBuildProjectDirectory)\$(OutputPath
 
   <ItemGroup>
 	  <ProjectReference Include="..\ObjectTK.Tools\ObjectTK.Tools.csproj" />
-	  <ProjectReference Include="..\ObjectTK\ObjectTK.csproj" />
   </ItemGroup>
 
   <ItemGroup>
